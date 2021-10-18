@@ -15,6 +15,8 @@ const Post = ({ post, content }) => {
             <Head>
                 <title>{post.title}</title>
                 <meta name="description" content={post.contents_short} />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.contents_short} />
             </Head>
 
             <div dangerouslySetInnerHTML={{ __html: content }} />
