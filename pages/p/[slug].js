@@ -14,9 +14,9 @@ const Post = ({ post, content }) => {
         <div>
             <Head>
                 <title>{post.title}</title>
-                <meta name="description" content={post.contents_short} />
+                <meta name="description" content={post?.preview?.teaser || ''} />
                 <meta property="og:title" content={post.title} />
-                <meta property="og:description" content={post.contents_short} />
+                <meta property="og:description" content={post?.preview?.teaser || ''} />
             </Head>
 
             <div dangerouslySetInnerHTML={{ __html: content }} />
