@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "normalize.css/normalize.css"
+import Head from 'next/head'
 import Link from "next/link";
 import { API_LIST_POSTS, getTimestamp, timeAgo } from "@/common/utils/utils";
 
-const ListPostItem = ({post}) => {
+const ListPostItem = ({ post }) => {
     const time = getTimestamp(post.published_at)
     const TimeAgo = timeAgo(time);
 
@@ -25,16 +25,20 @@ const ListPostItem = ({post}) => {
                 <span className="by">by <a target="_blank" href={post.user.data.id}>{post.user.data.name}</a></span>
                 <span className="time"> {TimeAgo} </span>
                 <span className="comments-link"> | <a target="_blank" href={post.url + '#comments'}>open comments</a></span>
-                <div style={{display: 'none'}}>{post.contents_short}</div>
+                <div style={{ display: 'none' }}>{post.contents_short}</div>
             </span>
         </li>
     )
 }
 
-function Home({posts}) {
+function Home({ posts }) {
     //console.log(posts)
     return (
         <div className="list-news-wrap">
+            <Head>
+                <title>Home</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <ul className="list-news">
                 {posts.length > 0 && posts.map((post, index) => (
                     <ListPostItem

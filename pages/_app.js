@@ -1,3 +1,4 @@
+import "normalize.css/normalize.css"
 import '../styles/globals.scss'
 import 'nprogress/nprogress.css'
 import Link from "next/link";
@@ -12,7 +13,7 @@ Router.events.on('routeChangeStart', (url) => {
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
     const router = useRouter();
     let d = new Date();
     let y = d.getFullYear();
@@ -43,7 +44,7 @@ function MyApp({Component, pageProps}) {
                 <div className="container">
                     <div className="wrap">
                         <div className="copyright">
-                        &copy; {y} - Made by <a target="_blank" href="https://ntcde.com">NTC</a>, All Right Reserved.
+                            &copy; {y} - Made by <a target="_blank" href="https://ntcde.com">NTC</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>
