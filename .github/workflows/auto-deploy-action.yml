@@ -24,6 +24,8 @@ jobs:
             cd demo-auto-deploy
             git pull
             yarn --version
-            yarn
-            yarn build
-            pm2 start app-pm2.json
+            node --version
+            npm --version
+            #yarn
+            #yarn build
+            #pm2 start app-pm2.json
