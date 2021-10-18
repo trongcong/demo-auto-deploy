@@ -26,6 +26,6 @@ jobs:
             yarn --version
             node --version
             npm --version
-            #yarn
+            yarn
             #yarn build
             #pm2 start app-pm2.json
