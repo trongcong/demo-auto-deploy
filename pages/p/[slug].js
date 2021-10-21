@@ -13,7 +13,6 @@ const Post = ({ post, content }) => {
     return (
         <div>
             <Head>
-                <title>{post.title}</title>
                 <meta name="description" content={post?.preview?.teaser || ''} />
                 <meta property="og:title" content={post.title} />
                 <meta property="og:description" content={post?.preview?.teaser || ''} />
